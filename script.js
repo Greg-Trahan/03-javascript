@@ -25,12 +25,13 @@ function generatePassword(){
 function numberOfCharacters(){
   var numCharacters = 0
   while (numCharacters < 8 || numCharacters > 128){
-     numCharacters =  parseInt(prompt("How many characters do you want your password to be?"));
-     if (numCharacters >= 8 && numCharacters <= 128){
+    numCharacters =  parseInt(prompt("How many characters do you want your password to be?"));
+    if (numCharacters >= 8 && numCharacters <= 128){
       return numCharacters
     }
     else {
       alert("Please enter a number between 8 and 128.")
+      numCharacters = 0
     }
   }
 }
@@ -50,7 +51,6 @@ function selectCharacterTypes(){
     if (characterTypes[0] === true){
       finalOptions = finalOptions.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     }
-    console.log("hi")
     if (characterTypes[1] === true){
       finalOptions = finalOptions.concat("abcdefghijklmnopqrstuvwxyz");
     }
@@ -63,7 +63,6 @@ function selectCharacterTypes(){
     if (finalOptions === ""){
       alert("Please choose at least one character type");
     }
-    console.log(characterTypes);
   }
   return finalOptions;
 }
